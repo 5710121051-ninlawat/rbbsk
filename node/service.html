@@ -10,18 +10,32 @@
 <script type="text/javascript" src="scripts/jquery.timers.1.2.js"></script>
 <script type="text/javascript" src="scripts/jquery.galleryview.2.1.1.min.js"></script>
 <script type="text/javascript" src="scripts/jquery.galleryview.setup.js"></script>
+<script type="text/javascript"> 
+<!-- 
+
+function loadIframe(){ 
+if (location.search.length > 0){ 
+url = unescape(location.search.substring(1)) 
+
+window.frames["myframe"].location=url 
+} 
+} 
+
+onload=loadIframe 
+//--> 
+</script>
 <script type="text/javascript">
 			<!--//
 			function sizeFrame(frameId) {
 
 				var F = document.getElementById(frameId);
 				if(F.contentDocument) {
-					F.height = F.contentDocument.documentElement.scrollHeight+30; //FF 3.0.11, Opera 9.63, and Chrome
+					F.height = F.contentDocument.documentElement.scrollHeight+400; //FF 3.0.11, Opera 9.63, and Chrome
 				} else {
 
 
 
-					F.height = F.contentWindow.document.body.scrollHeight+30; //IE6, IE7 and Chrome
+					F.height = F.contentWindow.document.body.scrollHeight+400; //IE6, IE7 and Chrome
 
 				}
 
@@ -31,6 +45,9 @@
 
 			//-->
 </script>
+
+
+
 </head>
 <body id="top">
 <!-- <div class="wrapper col0">
@@ -51,13 +68,13 @@
    <img src="images/logo.png" alt="logo" />
   </div>
 </div>
-<!-- ####################################################################################################### -->
-<div class="wrapper col2">
+<!-- #################################################Top menu ###################################################### -->
+	<div class="wrapper col2">
 			<div id="topbar">
 				<div id="topnav">
 					<ul>
 						<li class="last"><a href="../index.html">หน้าหลัก</a></li>
-						<li class="active"><a href="../node/about.html">เกี่ยวกับศูนย์</a></li>
+						<li class="last"><a href="../node/about.html">เกี่ยวกับศูนย์</a></li>
 						<li><a href="../node/project.html">โครงการวิจัย</a>
 						<ul>
 								<li><a href="#">โครงการวิจัยภาครัฐ</a></li>
@@ -67,7 +84,7 @@
 								
 						</ul>
 							</li>
-						<li><a href="../node/service.html">การบริการ</a>
+						<li class="active"><a href="../node/service.html">การบริการ</a>
 						<ul>
 								<li><a href="#">ห้องปฏิบัติการ</a></li>
 								<li><a href="#">การถ่ายทอดเทคโนโลยี</a></li>
@@ -134,12 +151,13 @@
 </div>
 <!-- ####################################################################################################### -->
 <div class="wrapper">
-  <div class="container">
-    <div class="content">
-    	<iframe width="100%" name="iframe"id="myFrame" src="../content/history_1.html" scrolling="no" frameborder="0" onload="sizeFrame('myFrame')">
+ <div class="container">
+   <div class="content">
+   
+   <iframe width="100%" name="myframe"id="myFrame" src="../news/main_news.html" scrolling="no" frameborder="0" onload="sizeFrame('myFrame')">
 					
 		</iframe>
-   <!--   <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
+     <!-- <h1>&lt;h1&gt; to &lt;h6&gt; - Headline Colour and Size Are All The Same</h1>
       <img class="imgr" src="images/demo/imgr.gif" alt="" width="125" height="125" />
       <p>Aliquatjusto quisque nam consequat doloreet vest orna partur scetur portortis nam. Metadipiscing eget facilis elit sagittis felisi eger id justo maurisus convallicitur.</p>
       <p>Dapiensociis <a href="#">temper donec auctortortis cumsan</a> et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem.</p>
@@ -183,59 +201,20 @@
             <td>Value 16</td>
           </tr>
         </tbody>
-      </table>
-      <div id="comments">
-        <h2>Comments</h2>
-        <ul class="commentlist">
-          <li class="comment_odd">
-            <div class="author"><img class="avatar" src="images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
-            <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
-            <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-          </li>
-          <li class="comment_even">
-            <div class="author"><img class="avatar" src="images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
-            <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
-            <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-          </li>
-          <li class="comment_odd">
-            <div class="author"><img class="avatar" src="images/demo/avatar.gif" width="32" height="32" alt="" /><span class="name"><a href="#">A Name</a></span> <span class="wrote">wrote:</span></div>
-            <div class="submitdate"><a href="#">August 4, 2009 at 8:35 am</a></div>
-            <p>This is an example of a comment made on a post. You can either edit the comment, delete the comment or reply to the comment. Use this as a place to respond to the post or to share what you are thinking.</p>
-          </li>
-        </ul>
-      </div>
-      <h2>Write A Comment</h2>
-      <div id="respond">
-        <form action="#" method="post">
-          <p>
-            <input type="text" name="name" id="name" value="" size="22" />
-            <label for="name"><small>Name (required)</small></label>
-          </p>
-          <p>
-            <input type="text" name="email" id="email" value="" size="22" />
-            <label for="email"><small>Mail (required)</small></label>
-          </p>
-          <p>
-            <textarea name="comment" id="comment" cols="100%" rows="10"></textarea>
-            <label for="comment" style="display:none;"><small>Comment (required)</small></label>
-          </p>
-          <p>
-            <input name="submit" type="submit" id="submit" value="Submit Form" />
-            &nbsp;
-            <input name="reset" type="reset" id="reset" tabindex="5" value="Reset Form" />
-          </p>
-        </form>
-      </div> -->
-    </div> 
+      </table> -->
+      
+     
+      
+    </div>
     <div class="column">
       <div class="subnav">
-        <h2>ข้อมูลศูนย์วิจัย</h2>
+        <h2>การบริการ</h2>
         <ul>
-          <li><a href="../content/history_1.html" target="iframe">ความเป็นมาศูนย์</a></li>
-          <li><a href="../content/roles.html" target="iframe">บทบาทและหน้าที่</a>
+          <li><a href="../article/main.html" target="myframe">โครงการวิจัย</a></li>
+          <li><a href="#">บทความเกี่ยวกับยางพารา</a>
             <ul>
-              <li><a href="../content/roles.html#rolesA" target="iframe">หน้าที่ความรับผิดชอบ</a></li>
-              <li><a href="../content/roles.html#rolesB" target="iframe">การแบ่งส่วนราชการ</a></li>
+              <li><a href="#">Free XHTML Templates</a></li>
+              <li><a href="#">Free Website Templates</a></li>
             </ul>
           </li>
           <li><a href="#">Open Source Layouts</a>
@@ -266,18 +245,8 @@
             <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
           </li>
         </ul>
-      </div> 
-      <div id="featured">
-        <ul>
-          <li>
-            <h2>Indonectetus facilis leonib</h2>
-            <p class="imgholder"><img src="images/demo/240x90.gif" alt="" /></p>
-            <p>Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.</p>
-            <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-          </li>
-        </ul>
-      </div> 
-      <!-- <div class="holder">
+      </div>
+      <div class="holder">
         <h2>Lorem ipsum dolor</h2>
         <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed.</p>
         <ul>
@@ -287,11 +256,11 @@
         </ul>
         <p>Nuncsed sed conseque a at quismodo tris mauristibus sed habiturpiscinia sed. Condimentumsantincidunt dui mattis magna intesque purus orci augue lor nibh.</p>
         <p class="readmore"><a href="#">Continue Reading &raquo;</a></p>
-      </div>  -->
-    </div> 
+      </div>
+    </div>
     <br class="clear" />
   </div>
-</div>  
+</div>
 <!-- ####################################################################################################### -->
 <div class="wrapper">
   <div id="adblock">
